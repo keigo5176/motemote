@@ -1,0 +1,474 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>モテモテ度診断</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; line-height: 1.6; }
+    .question { margin-bottom: 20px; }
+    button, a.share-button {
+      padding: 10px 15px;
+      font-size: 16px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin: 5px 0;
+    }
+    a#twitterShare { background: #1DA1F2; color: white; }
+    a#lineShare { background: #06C755; color: white; }
+    #resultPage { display: none; }
+    #result { font-weight: bold; font-size: 20px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div id="quizPage">
+    <h1>モテモテ度診断</h1>
+    <form id="quizForm">
+
+    <div class="question">
+      <p>1. 初対面の人と話すのが得意ですか？</p>
+      <label><input type="radio" name="q1" value="2"> はい</label><br>
+      <label><input type="radio" name="q1" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q1" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>2. 笑顔でいる時間が多いですか？</p>
+      <label><input type="radio" name="q2" value="2"> はい</label><br>
+      <label><input type="radio" name="q2" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q2" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>3. 身だしなみに気をつかっていますか？</p>
+      <label><input type="radio" name="q3" value="2"> はい</label><br>
+      <label><input type="radio" name="q3" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q3" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>4. 清潔感には自信がありますか？</p>
+      <label><input type="radio" name="q4" value="2"> はい</label><br>
+      <label><input type="radio" name="q4" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q4" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>5. 服装や髪型は流行を意識しますか？</p>
+      <label><input type="radio" name="q5" value="2"> はい</label><br>
+      <label><input type="radio" name="q5" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q5" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>6. 話し相手の目を見て会話しますか？</p>
+      <label><input type="radio" name="q6" value="2"> はい</label><br>
+      <label><input type="radio" name="q6" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q6" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>7. SNSで好印象な投稿を心がけていますか？</p>
+      <label><input type="radio" name="q7" value="2"> はい</label><br>
+      <label><input type="radio" name="q7" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q7" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>8. 聞き上手だとよく言われますか？</p>
+      <label><input type="radio" name="q8" value="2"> はい</label><br>
+      <label><input type="radio" name="q8" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q8" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>9. ユーモアがあると言われますか？</p>
+      <label><input type="radio" name="q9" value="2"> はい</label><br>
+      <label><input type="radio" name="q9" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q9" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>10. リアクションが豊かだと思いますか？</p>
+      <label><input type="radio" name="q10" value="2"> はい</label><br>
+      <label><input type="radio" name="q10" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q10" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>11. 気配りができるタイプですか？</p>
+      <label><input type="radio" name="q11" value="2"> はい</label><br>
+      <label><input type="radio" name="q11" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q11" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>12. 初対面の人に親しみやすいと言われますか？</p>
+      <label><input type="radio" name="q12" value="2"> はい</label><br>
+      <label><input type="radio" name="q12" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q12" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>13. 自分の長所を自信を持って話せますか？</p>
+      <label><input type="radio" name="q13" value="2"> はい</label><br>
+      <label><input type="radio" name="q13" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q13" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>14. 異性の友人が多いですか？</p>
+      <label><input type="radio" name="q14" value="2"> はい</label><br>
+      <label><input type="radio" name="q14" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q14" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>15. 恋愛経験が多い方ですか？</p>
+      <label><input type="radio" name="q15" value="2"> はい</label><br>
+      <label><input type="radio" name="q15" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q15" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>16. モテそうと言われたことがありますか？</p>
+      <label><input type="radio" name="q16" value="2"> はい</label><br>
+      <label><input type="radio" name="q16" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q16" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>17. 食事のマナーには自信がありますか？</p>
+      <label><input type="radio" name="q17" value="2"> はい</label><br>
+      <label><input type="radio" name="q17" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q17" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>18. ポジティブ思考ですか？</p>
+      <label><input type="radio" name="q18" value="2"> はい</label><br>
+      <label><input type="radio" name="q18" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q18" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>19. 落ち着いた印象を持たれることが多いですか？</p>
+      <label><input type="radio" name="q19" value="2"> はい</label><br>
+      <label><input type="radio" name="q19" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q19" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>20. 自分の魅力をアピールするのが得意ですか？</p>
+      <label><input type="radio" name="q20" value="2"> はい</label><br>
+      <label><input type="radio" name="q20" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q20" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>21. 表情豊かですか？</p>
+      <label><input type="radio" name="q21" value="2"> はい</label><br>
+      <label><input type="radio" name="q21" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q21" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>22. 香水や柔軟剤など香りにも気を使っていますか？</p>
+      <label><input type="radio" name="q22" value="2"> はい</label><br>
+      <label><input type="radio" name="q22" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q22" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>23. 姿勢が良いとよく言われますか？</p>
+      <label><input type="radio" name="q23" value="2"> はい</label><br>
+      <label><input type="radio" name="q23" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q23" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>24. 人前で話すのが得意ですか？</p>
+      <label><input type="radio" name="q24" value="2"> はい</label><br>
+      <label><input type="radio" name="q24" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q24" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>25. 清掃や整理整頓が得意ですか？</p>
+      <label><input type="radio" name="q25" value="2"> はい</label><br>
+      <label><input type="radio" name="q25" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q25" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>26. 感謝の気持ちをすぐ言葉にできますか？</p>
+      <label><input type="radio" name="q26" value="2"> はい</label><br>
+      <label><input type="radio" name="q26" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q26" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>27. 好奇心旺盛な方ですか？</p>
+      <label><input type="radio" name="q27" value="2"> はい</label><br>
+      <label><input type="radio" name="q27" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q27" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>28. 休日もアクティブに過ごす方ですか？</p>
+      <label><input type="radio" name="q28" value="2"> はい</label><br>
+      <label><input type="radio" name="q28" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q28" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>29. 常に笑顔を意識していますか？</p>
+      <label><input type="radio" name="q29" value="2"> はい</label><br>
+      <label><input type="radio" name="q29" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q29" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>30. SNSのアイコンやプロフィールにこだわっていますか？</p>
+      <label><input type="radio" name="q30" value="2"> はい</label><br>
+      <label><input type="radio" name="q30" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q30" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>31. 友達から相談されることが多いですか？</p>
+      <label><input type="radio" name="q31" value="2"> はい</label><br>
+      <label><input type="radio" name="q31" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q31" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>32. 会話のテンポが良いとよく言われますか？</p>
+      <label><input type="radio" name="q32" value="2"> はい</label><br>
+      <label><input type="radio" name="q32" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q32" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>33. 恋愛において駆け引きが上手いですか？</p>
+      <label><input type="radio" name="q33" value="2"> はい</label><br>
+      <label><input type="radio" name="q33" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q33" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>34. ファッションにこだわりがありますか？</p>
+      <label><input type="radio" name="q34" value="2"> はい</label><br>
+      <label><input type="radio" name="q34" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q34" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>35. 常にポジティブな言葉を使っていますか？</p>
+      <label><input type="radio" name="q35" value="2"> はい</label><br>
+      <label><input type="radio" name="q35" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q35" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>36. 人から誘われることが多いですか？</p>
+      <label><input type="radio" name="q36" value="2"> はい</label><br>
+      <label><input type="radio" name="q36" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q36" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>37. 褒め言葉を素直に受け取れますか？</p>
+      <label><input type="radio" name="q37" value="2"> はい</label><br>
+      <label><input type="radio" name="q37" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q37" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>38. 自分の考えをハッキリ伝えられますか？</p>
+      <label><input type="radio" name="q38" value="2"> はい</label><br>
+      <label><input type="radio" name="q38" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q38" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>39. 人の話を最後まで聞くことができますか？</p>
+      <label><input type="radio" name="q39" value="2"> はい</label><br>
+      <label><input type="radio" name="q39" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q39" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>40. デートプランを考えるのが得意ですか？</p>
+      <label><input type="radio" name="q40" value="2"> はい</label><br>
+      <label><input type="radio" name="q40" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q40" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>41. 記念日などを大切にしますか？</p>
+      <label><input type="radio" name="q41" value="2"> はい</label><br>
+      <label><input type="radio" name="q41" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q41" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>42. 落ち込んでいる友達に寄り添えますか？</p>
+      <label><input type="radio" name="q42" value="2"> はい</label><br>
+      <label><input type="radio" name="q42" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q42" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>43. 初対面の人に印象が良いと言われますか？</p>
+      <label><input type="radio" name="q43" value="2"> はい</label><br>
+      <label><input type="radio" name="q43" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q43" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>44. スキンケアなど美容に気を使っていますか？</p>
+      <label><input type="radio" name="q44" value="2"> はい</label><br>
+      <label><input type="radio" name="q44" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q44" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>45. オシャレなカフェやお店をよく知っていますか？</p>
+      <label><input type="radio" name="q45" value="2"> はい</label><br>
+      <label><input type="radio" name="q45" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q45" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>46. LINEやDMの返信は早い方ですか？</p>
+      <label><input type="radio" name="q46" value="2"> はい</label><br>
+      <label><input type="radio" name="q46" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q46" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>47. 声のトーンや話し方に気を配っていますか？</p>
+      <label><input type="radio" name="q47" value="2"> はい</label><br>
+      <label><input type="radio" name="q47" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q47" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>48. 日常のちょっとしたことに幸せを感じますか？</p>
+      <label><input type="radio" name="q48" value="2"> はい</label><br>
+      <label><input type="radio" name="q48" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q48" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>49. 恋愛映画やドラマが好きですか？</p>
+      <label><input type="radio" name="q49" value="2"> はい</label><br>
+      <label><input type="radio" name="q49" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q49" value="0"> いいえ</label>
+    </div>
+    
+    <div class="question">
+      <p>50. 相手の立場になって物事を考えられますか？</p>
+      <label><input type="radio" name="q50" value="2"> はい</label><br>
+      <label><input type="radio" name="q50" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q50" value="0"> いいえ</label>
+    </div>
+    
+      <button type="button" onclick="calculateScore()">診断する</button>
+    </form>
+  </div>
+
+  <div id="resultPage">
+    <h1>診断結果</h1>
+    <div id="result"></div>
+
+    <a id="twitterShare" class="share-button" href="#" target="_blank">Twitterでシェアする</a><br>
+    <a id="lineShare" class="share-button" href="#" target="_blank">LINEでシェアする</a><br>
+    <button onclick="saveAsImage()">画像として保存（Instagram用）</button>
+    <p style="font-size: 0.9em;">※画像を保存してInstagramストーリーに投稿してください</p>
+
+    <br><button onclick="goBack()">もう一度診断する</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script>
+    function calculateScore() {
+      let score = 0;
+      for (let i = 1; i <= 50; i++) {
+        const radios = document.getElementsByName('q' + i);
+        let answered = false;
+        for (const radio of radios) {
+          if (radio.checked) {
+            score += parseInt(radio.value);
+            answered = true;
+            break;
+          }
+        }
+        if (!answered) {
+          alert('質問 ' + i + ' に答えてください');
+          return;
+        }
+      }
+
+      let result = "";
+      if (score >= 90) {
+        result = "モテモテレベル：★★★★★（かなりモテます！）";
+      } else if (score >= 70) {
+        result = "モテモテレベル：★★★★☆（そこそこモテます）";
+      } else if (score >= 50) {
+        result = "モテモテレベル：★★★☆☆（平均的なモテ度）";
+      } else if (score >= 30) {
+        result = "モテモテレベル：★★☆☆☆（ちょっとがんばろう）";
+      } else {
+        result = "モテモテレベル：★☆☆☆☆（まずは自信を持つことから！）";
+      }
+
+      
+      let explanation = "";
+      if (score >= 90) {
+        explanation = "あなたは誰とでもすぐに打ち解けられるタイプ。自信と魅力にあふれ、自然と人が寄ってきます！";
+      } else if (score >= 70) {
+        explanation = "人当たりがよく、好感度が高いあなた。モテ要素は十分に備わっています！";
+      } else if (score >= 50) {
+        explanation = "平均的なモテ度ですが、努力次第でグンとアップします。まずは笑顔から！";
+      } else if (score >= 30) {
+        explanation = "少し消極的な傾向があります。自信を持って、自分の魅力を伝えてみましょう！";
+      } else {
+        explanation = "まだモテへの一歩を踏み出せていないかも？見た目より中身を磨くことでチャンスは広がります！";
+      }
+      const finalMessage = result + " （スコア：" + score + "点）\n" + explanation;
+    
+      document.getElementById('result').innerText = finalMessage;
+
+      const tweetText = encodeURIComponent("【モテモテ度診断の結果】\n" + finalMessage + "\nあなたも診断してみてね！👇");
+      const tweetUrl = "https://twitter.com/intent/tweet?text=" + tweetText + "&url=https://example.com";
+      document.getElementById('twitterShare').href = tweetUrl;
+
+      const lineUrl = "https://social-plugins.line.me/lineit/share?url=https://example.com";
+      document.getElementById('lineShare').href = lineUrl;
+
+      document.getElementById('quizPage').style.display = 'none';
+      document.getElementById('resultPage').style.display = 'block';
+    }
+
+    function saveAsImage() {
+      html2canvas(document.querySelector("#resultPage")).then(canvas => {
+        const link = document.createElement("a");
+        link.download = "motemote_result.png";
+        link.href = canvas.toDataURL();
+        link.click();
+      });
+    }
+
+    function goBack() {
+      document.getElementById('quizForm').reset();
+      document.getElementById('quizPage').style.display = 'block';
+      document.getElementById('resultPage').style.display = 'none';
+      window.scrollTo(0, 0);
+    }
+  </script>
+</body>
+</html>

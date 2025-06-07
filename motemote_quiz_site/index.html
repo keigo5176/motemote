@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>モテモテ度診断</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; line-height: 1.6; }
+    .question { margin-bottom: 20px; }
+    button, a.share-button {
+      padding: 10px 15px;
+      font-size: 16px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin: 5px 0;
+    }
+    a#twitterShare { background: #1DA1F2; color: white; }
+    a#lineShare { background: #06C755; color: white; }
+    #resultPage { display: none; }
+    #result { font-weight: bold; font-size: 20px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div id="quizPage">
+    <h1>モテモテ度診断</h1>
+    <form id="quizForm">
+
+    <div class="question">
+      <p>1. 初対面の人と話すのが得意ですか？</p>
+      <label><input type="radio" name="q1" value="2"> はい</label><br>
+      <label><input type="radio" name="q1" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q1" value="0"> いいえ</label>
+    </div><div class="question">
+      <p>2. 笑顔でいる時間が多いですか？</p>
+      <label><input type="radio" name="q2" value="2"> はい</label><br>
+      <label><input type="radio" name="q2" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q2" value="0"> いいえ</label>
+    </div><div class="question">
+      <p>3. 身だしなみに気をつかっていますか？</p>
+      <label><input type="radio" name="q3" value="2"> はい</label><br>
+      <label><input type="radio" name="q3" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q3" value="0"> いいえ</label>
+    </div><div class="question">
+      <p>4. 清潔感には自信がありますか？</p>
+      <label><input type="radio" name="q4" value="2"> はい</label><br>
+      <label><input type="radio" name="q4" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q4" value="0"> いいえ</label>
+    </div><div class="question">
+      <p>5. 服装や髪型は流行を意識しますか？</p>
+      <label><input type="radio" name="q5" value="2"> はい</label><br>
+      <label><input type="radio" name="q5" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q5" value="0"> いいえ</label>
+    </div><div class="question">
+      <p>6. 話し相手の目を見て会話しますか？</p>
+      <label><input type="radio" name="q6" value="2"> はい</label><br>
+      <label><input type="radio" name="q6" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q6" value="0"> いいえ</label>
+    </div><div class="question">
+      <p>7. SNSで好印象な投稿を心がけていますか？</p>
+      <label><input type="radio" name="q7" value="2"> はい</label><br>
+      <label><input type="radio" name="q7" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q7" value="0"> いいえ</label>
+    </div><div class="question">
+      <p>8. 聞き上手だとよく言われますか？</p>
+      <label><input type="radio" name="q8" value="2"> はい</label><br>
+      <label><input type="radio" name="q8" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q8" value="0"> いいえ</label>
+    </div><div class="question">
+      <p>9. ユーモアがあると言われますか？</p>
+      <label><input type="radio" name="q9" value="2"> はい</label><br>
+      <label><input type="radio" name="q9" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q9" value="0"> いいえ</label>
+    </div><div class="question">
+      <p>10. リアクションが豊かだと思いますか？</p>
+      <label><input type="radio" name="q10" value="2"> はい</label><br>
+      <label><input type="radio" name="q10" value="1"> どちらでもない</label><br>
+      <label><input type="radio" name="q10" value="0"> いいえ</label>
+    </div>
+<div style="margin-top: 20px;">
+  
+  <button type="button" onclick="location.href='questions_11_20.html'">次へ</button>
+</div>
+
+</form></div></body></html>
